@@ -292,3 +292,301 @@
 [2025-05-22 19:14:07Z INFO CredentialManager] Creating type OAuth
 [2025-05-22 19:14:07Z INFO CredentialManager] Creating credential type: OAuth
 [2025-05-22 19:14:07Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:14:57Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:14:57Z INFO ConfigurationStore] stored True
+[2025-05-22 19:14:57Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:14:57Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:14:57Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:14:57Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:15:47Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:15:47Z INFO ConfigurationStore] stored True
+[2025-05-22 19:15:47Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:15:47Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:15:47Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:15:47Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:16:38Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:16:38Z INFO ConfigurationStore] stored True
+[2025-05-22 19:16:38Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:16:38Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:16:38Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:16:38Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:16:47Z INFO MessageListener] Message '5574445291278501727' received from session 'cedc75d4-23d3-4b2d-9627-a058934387f8'.
+[2025-05-22 19:16:47Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:16:47Z INFO ConfigurationStore] stored True
+[2025-05-22 19:16:47Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:16:47Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:16:47Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:16:47Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:16:47Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:16:47Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:16:47Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2025-05-22 19:16:47Z INFO JobDispatcher] Job request 0 for plan 39733a72-9226-4def-ae88-a02ce910bfce job ab1d44c7-6280-5b5c-9206-f60eb17a052b received.
+[2025-05-22 19:16:47Z INFO MessageListener] Received job status event. JobState: Busy
+[2025-05-22 19:16:47Z INFO MessageListener] _getMessagesTokenSource is already disposed.
+[2025-05-22 19:16:47Z INFO JobDispatcher] Job request fcff8936-fd7d-5bb2-bc0f-34cc7de81fd4 processed succeed.
+[2025-05-22 19:16:47Z INFO Terminal] WRITE LINE: 2025-05-22 19:16:47Z: Running job: encoding
+[2025-05-22 19:16:47Z INFO JobDispatcher] Start renew job request 0 for job ab1d44c7-6280-5b5c-9206-f60eb17a052b.
+[2025-05-22 19:16:47Z INFO JobDispatcher] Successfully renew job ab1d44c7-6280-5b5c-9206-f60eb17a052b, job is valid till 2025-05-22 7:26:47 PM
+[2025-05-22 19:16:47Z INFO HostContext] Well known directory 'Bin': 'C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\bin'
+[2025-05-22 19:16:47Z INFO ProcessInvokerWrapper] Starting process:
+[2025-05-22 19:16:47Z INFO ProcessInvokerWrapper]   File name: 'C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\bin\Runner.Worker.exe'
+[2025-05-22 19:16:47Z INFO ProcessInvokerWrapper]   Arguments: 'spawnclient 1548 2288'
+[2025-05-22 19:16:47Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\bin'
+[2025-05-22 19:16:47Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-05-22 19:16:47Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-05-22 19:16:47Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'True'
+[2025-05-22 19:16:47Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-05-22 19:16:47Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2025-05-22 19:16:47Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-05-22 19:16:47Z INFO ProcessInvokerWrapper]   High priority process: 'True'
+[2025-05-22 19:16:47Z INFO ProcessInvokerWrapper] Process started with process id 6360, waiting for process exit.
+[2025-05-22 19:16:47Z INFO JobDispatcher] Send job request message to worker for job ab1d44c7-6280-5b5c-9206-f60eb17a052b.
+[2025-05-22 19:16:47Z INFO ProcessChannel] Sending message of length 40972, with hash '5dcdbbb0b9d35a7854b31222165a6e25a788b0c72d7e471d7bab90ba4191aac4'
+[2025-05-22 19:16:48Z INFO JobNotification] Entering JobStarted Notification
+[2025-05-22 19:16:48Z INFO JobNotification] Entering StartMonitor
+[2025-05-22 19:16:49Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:16:49Z INFO ConfigurationStore] stored True
+[2025-05-22 19:16:49Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:16:49Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:16:49Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:16:49Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:17:00Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-05-22 19:17:00Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-05-22 19:17:00Z INFO ProcessInvokerWrapper] Finished process 6360 with exit code 102, and elapsed time 00:00:12.2309487.
+[2025-05-22 19:17:00Z INFO JobDispatcher] Worker finished for job ab1d44c7-6280-5b5c-9206-f60eb17a052b. Code: 102
+[2025-05-22 19:17:00Z INFO JobDispatcher] finish job request for job ab1d44c7-6280-5b5c-9206-f60eb17a052b with result: Failed
+[2025-05-22 19:17:00Z INFO Terminal] WRITE LINE: 2025-05-22 19:17:00Z: Job encoding completed with result: Failed
+[2025-05-22 19:17:00Z INFO JobDispatcher] Stop renew job request for job ab1d44c7-6280-5b5c-9206-f60eb17a052b.
+[2025-05-22 19:17:00Z INFO JobDispatcher] job renew has been cancelled, stop renew job ab1d44c7-6280-5b5c-9206-f60eb17a052b.
+[2025-05-22 19:17:00Z INFO JobNotification] Entering JobCompleted Notification
+[2025-05-22 19:17:00Z INFO JobNotification] Entering EndMonitor
+[2025-05-22 19:17:00Z INFO MessageListener] Received job status event. JobState: Online
+[2025-05-22 19:17:39Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:17:39Z INFO ConfigurationStore] stored True
+[2025-05-22 19:17:39Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:17:39Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:17:39Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:17:39Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:18:29Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:18:29Z INFO ConfigurationStore] stored True
+[2025-05-22 19:18:29Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:18:29Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:18:29Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:18:29Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:19:19Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:19:19Z INFO ConfigurationStore] stored True
+[2025-05-22 19:19:19Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:19:19Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:19:19Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:19:19Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:20:10Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:20:10Z INFO ConfigurationStore] stored True
+[2025-05-22 19:20:10Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:20:10Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:20:10Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:20:10Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:21:00Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:21:00Z INFO ConfigurationStore] stored True
+[2025-05-22 19:21:00Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:21:00Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:21:00Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:21:00Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:21:50Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:21:50Z INFO ConfigurationStore] stored True
+[2025-05-22 19:21:50Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:21:50Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:21:50Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:21:50Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:22:41Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:22:41Z INFO ConfigurationStore] stored True
+[2025-05-22 19:22:41Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:22:41Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:22:41Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:22:41Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:23:31Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:23:31Z INFO ConfigurationStore] stored True
+[2025-05-22 19:23:31Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:23:31Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:23:31Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:23:31Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:24:21Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:24:21Z INFO ConfigurationStore] stored True
+[2025-05-22 19:24:21Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:24:21Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:24:21Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:24:21Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:25:11Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:25:11Z INFO ConfigurationStore] stored True
+[2025-05-22 19:25:11Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:25:11Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:25:11Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:25:11Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:26:02Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:26:02Z INFO ConfigurationStore] stored True
+[2025-05-22 19:26:02Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:26:02Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:26:02Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:26:02Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:26:52Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:26:52Z INFO ConfigurationStore] stored True
+[2025-05-22 19:26:52Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:26:52Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:26:52Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:26:52Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:27:42Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:27:42Z INFO ConfigurationStore] stored True
+[2025-05-22 19:27:42Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:27:42Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:27:42Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:27:42Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:28:33Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:28:33Z INFO ConfigurationStore] stored True
+[2025-05-22 19:28:33Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:28:33Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:28:33Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:28:33Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:29:23Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:29:23Z INFO ConfigurationStore] stored True
+[2025-05-22 19:29:23Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:29:23Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:29:23Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:29:23Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:30:13Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:30:13Z INFO ConfigurationStore] stored True
+[2025-05-22 19:30:13Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:30:13Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:30:13Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:30:13Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:31:03Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:31:03Z INFO ConfigurationStore] stored True
+[2025-05-22 19:31:03Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:31:03Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:31:03Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:31:03Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:31:54Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:31:54Z INFO ConfigurationStore] stored True
+[2025-05-22 19:31:54Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:31:54Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:31:54Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:31:54Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:32:44Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:32:44Z INFO ConfigurationStore] stored True
+[2025-05-22 19:32:44Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:32:44Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:32:44Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:32:44Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:33:34Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:33:34Z INFO ConfigurationStore] stored True
+[2025-05-22 19:33:34Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:33:34Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:33:34Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:33:34Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:34:25Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:34:25Z INFO ConfigurationStore] stored True
+[2025-05-22 19:34:25Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:34:25Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:34:25Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:34:25Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:35:15Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:35:15Z INFO ConfigurationStore] stored True
+[2025-05-22 19:35:15Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:35:15Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:35:15Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:35:15Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:36:05Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:36:05Z INFO ConfigurationStore] stored True
+[2025-05-22 19:36:05Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:36:05Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:36:05Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:36:05Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:36:55Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:36:55Z INFO ConfigurationStore] stored True
+[2025-05-22 19:36:55Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:36:55Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:36:55Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:36:55Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:37:46Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:37:46Z INFO ConfigurationStore] stored True
+[2025-05-22 19:37:46Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:37:46Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:37:46Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:37:46Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:38:36Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:38:36Z INFO ConfigurationStore] stored True
+[2025-05-22 19:38:36Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:38:36Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:38:36Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:38:36Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:39:26Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:39:26Z INFO ConfigurationStore] stored True
+[2025-05-22 19:39:26Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:39:26Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:39:26Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:39:26Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:40:16Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:40:16Z INFO ConfigurationStore] stored True
+[2025-05-22 19:40:16Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:40:16Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:40:16Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:40:16Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:41:07Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:41:07Z INFO ConfigurationStore] stored True
+[2025-05-22 19:41:07Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:41:07Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:41:07Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:41:07Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:41:57Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:41:57Z INFO ConfigurationStore] stored True
+[2025-05-22 19:41:57Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:41:57Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:41:57Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:41:57Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:42:47Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:42:47Z INFO ConfigurationStore] stored True
+[2025-05-22 19:42:47Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:42:47Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:42:47Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:42:47Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:43:38Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:43:38Z INFO ConfigurationStore] stored True
+[2025-05-22 19:43:38Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:43:38Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:43:38Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:43:38Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:44:28Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:44:28Z INFO ConfigurationStore] stored True
+[2025-05-22 19:44:28Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:44:28Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:44:28Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:44:28Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:45:18Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:45:18Z INFO ConfigurationStore] stored True
+[2025-05-22 19:45:18Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:45:18Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:45:18Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:45:18Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:46:08Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:46:08Z INFO ConfigurationStore] stored True
+[2025-05-22 19:46:08Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:46:08Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:46:08Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:46:08Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:46:59Z INFO MessageListener] No message retrieved from session 'cedc75d4-23d3-4b2d-9627-a058934387f8' within last 30 minutes.
+[2025-05-22 19:46:59Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:46:59Z INFO ConfigurationStore] stored True
+[2025-05-22 19:46:59Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:46:59Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:46:59Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:46:59Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:47:49Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:47:49Z INFO ConfigurationStore] stored True
+[2025-05-22 19:47:49Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:47:49Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:47:49Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:47:49Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:48:39Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:48:39Z INFO ConfigurationStore] stored True
+[2025-05-22 19:48:39Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:48:39Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:48:39Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:48:39Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams

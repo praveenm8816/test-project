@@ -19,59 +19,30 @@ R_SCRIPT_FOLDERS = [
     os.path.normpath("clpss-db/DB/sql/*")
 ]
 
-# def is_windows1252_encoded(file_path):
-#     with open(file_path, 'rb') as f:
-#         raw = f.read()
-
-#     result = chardet.detect(raw)
-#     encoding = (result['encoding'] or '').lower()
-#     confidence = result.get('confidence', 0)
-
-#     print(f"{file_path}: Detected '{encoding}' (confidence: {confidence:.2f})")
-#     return encoding == 'windows-1252' and confidence >= 0.7
-
-# def main(files):
-#     failed = False
-#     for file_path in files:
-#         if not os.path.isfile(file_path):
-#             continue
-#         if not is_windows1252_encoded(file_path):
-#             print(f"File '{file_path}' is NOT Windows-1252 encoded!")
-#             failed = True
-#     if failed:
-#         sys.exit(1)
-#     print("All files are Windows-1252 encoded.")
-
-
-# def is_windows1252_encoded(file_path: str) -> bool:
-#     try:
-#         with open(file_path, 'rb') as f:
-#             raw = f.read()
-#         result = chardet.detect(raw)
-#         encoding = (result['encoding'] or '').lower()
-#         confidence = result.get('confidence', 0)
-#         print(f"{file_path}: Detected encoding '{encoding}' (confidence: {confidence:.2f})")
-#         return encoding == 'windows-1252' and confidence >= 0.80
-#     except Exception as e:
-#         print(f" Error reading or detecting encoding for {file_path}: {e}")
-#         return False
-
-def is_windows1252_encoded(file_path):
-    with open(file_path, 'rb') as file:
-        raw_data = file.read()
-        result = chardet.detect(raw_data)
-        encoding = result['encoding']
-        confidence = result['confidence']
-        print(f"{file_path}: detected encoding={encoding}, confidence={confidence}")
-        return encoding == 'Windows-1252'
+def is_windows1252_encoded(file_path, min_confidence=0.8):
+    try:
+        with open(file_path, 'rb') as f:
+            raw = f.read()
+        result = chardet.detect(raw)
+        encoding = (result['encoding'] or '').lower()
+        confidence = result.get('confidence', 0)
+        print(f"{file_path}: Detected encoding '{encoding}' (confidence: {confidence:.2f})")
+        return encoding == 'windows-1252' and confidence >= min_confidence
+    except Exception as e:
+        print(f"Error reading or detecting encoding for {file_path}: {e}")
+        return False
 
 def main(files):
+    failed = False
     for file_path in files:
         if not os.path.isfile(file_path):
             continue
         if not is_windows1252_encoded(file_path):
-            print(f"Issues found in file: {file_path}")
-            print("  - Invalid encoding (not Windows-1252)")   
+            print(f"File '{file_path}' is NOT Windows-1252 encoded!")
+            failed = True
+    if failed:
+        sys.exit(1)
+    print("All files are Windows-1252 encoded.")
 
 def is_valid_filename(filename):
     errors = []
