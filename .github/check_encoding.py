@@ -21,10 +21,12 @@ R_SCRIPT_FOLDERS = [
 
 def is_windows1252_encoded(file_path):
     try:
-        with open("file_path 'r', encoding='windows-1252'") as f:
+        with open("file_path, 'r', encoding='windows-1252'") as f:
             f.read()
         return True
     except UnicodeDecodeError:
+        return False
+    except FileNotFoundError:
         return False
 
 
