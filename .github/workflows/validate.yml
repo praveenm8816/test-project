@@ -1,4 +1,4 @@
-name: Validate Encoding, Naming Convention, Folder Location before Merging PR
+name: PR Validation
 
 on:
   pull_request:
