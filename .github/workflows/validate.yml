@@ -2,22 +2,23 @@ name: PR Validation
 
 on:
   pull_request:
-    branches: [ "main" ]
+    branches: [ "develop" ]
     types: [ opened, synchronize, reopened ]
   push:
-    branches: [ "main" ]
+    branches: [ "develop" ]
 
 jobs:
-    runs-on: ubuntu-latest
+  encoding:
+    runs-on: self-hosted
 
-steps:
+    steps:
     - name: Checkout code
       uses: actions/checkout@v4
       with:
         fetch-depth: 0
 
     - name: Fetch base branch
-      run: git fetch origin main
+      run: git fetch origin develop
 
     - name: Check OS
       run: |
@@ -45,7 +46,7 @@ steps:
     - name: Get changed files
       id: changed-files
       run: |
-        git diff --name-status origin/main...HEAD > changed_files.txt
+        git diff --name-status origin/develop...HEAD > changed_files.txt
         echo "CHANGED_FILES=$(awk '{print $2}' changed_files.txt | paste -sd ',' -)" >> $GITHUB_ENV
 
     - name: Run encoding, naming, and location checks
