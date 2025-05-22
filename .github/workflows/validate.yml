@@ -5,8 +5,7 @@ on:
     branches: [ "develop" ]
 
 jobs:
-  validate:
-    name: encoding
+  pyla:
     runs-on: ubuntu-latest
 
     steps:
