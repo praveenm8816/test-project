@@ -27,7 +27,7 @@ jobs:
             fetch-depth: 0
 
       - name: Fetch base branch
-        run: git fetch origin develop
+        run: git fetch origin main
 
       - name: check os
         run: |
@@ -56,8 +56,8 @@ jobs:
       - name: Get changed files 
         id: files 
         run: |
-          #echo "CHANGED_FILES-$(git diff --name-only origin/encoding-check. HEAD)" »> $GITHUB _ENV echo "CHANGED_FILES<<EOF" »› $GITHUB_ENV
-          git diff --name-status origin/encoding-check...HEAD »> $GITHUB_ENV
+          #echo "CHANGED_FILES-$(git diff --name-only origin/main. HEAD)" »> $GITHUB _ENV echo "CHANGED_FILES<<EOF" »› $GITHUB_ENV
+          git diff --name-status origin/main...HEAD »> $GITHUB_ENV
           echo "EOF" » $GITHUB_ENV
       - name: Run encoding check, Naming Convention, Folder location checks 
         run: |
