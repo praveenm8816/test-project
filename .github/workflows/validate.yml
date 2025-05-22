@@ -3,14 +3,22 @@ name: PR Validation
 on:
   pull_request:
     branches: [ "develop" ]
+    types: [ opened, synchronize, reopened ]
+  push:
+    branches: [ "develop" ]
 
 jobs:
-  encoding-check:
+  validate:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fetch base branch
+        run: git fetch origin develop
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -20,16 +28,16 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install chardet  # Only install what your script needs
+          pip install chardet
 
       - name: Get changed files
         id: changed-files
         run: |
-          git fetch origin develop
           git diff --name-status origin/develop...HEAD > changed_files.txt
           echo "CHANGED_FILES=$(awk '{print $2}' changed_files.txt | paste -sd ',' -)" >> $GITHUB_ENV
+          echo "CHANGED_STATUS=$(paste -sd ';' changed_files.txt)" >> $GITHUB_ENV
 
-      - name: Run encoding, naming, and location checks
+      - name: Run custom validations
         run: |
           echo "$CHANGED_FILES" | tr ',' '\n' > changed_file_list.txt
           FILES=$(awk '/\.(sql|txt|csv|pkb)$/' changed_file_list.txt || true)
@@ -37,4 +45,4 @@ jobs:
             echo "No relevant files to check."
             exit 0
           fi
-          python3 .github/check_encoding.py $FILES
+          python3 .github/check_encoding.py $FILES --status-files "$CHANGED_STATUS"
