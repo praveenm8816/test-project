@@ -8,9 +8,10 @@ on:
     branches: [ "develop" ]
 
 jobs:
+  encoding:
     runs-on: self-hosted
 
-steps:
+    steps:
     - name: Checkout code
       uses: actions/checkout@v4
       with:
