@@ -71,7 +71,12 @@ def main(files):
             continue
         if not is_windows1252_encoded(file_path):
             print(f"Issues found in file: {file_path}")
+<<<<<<< HEAD
             print("  - Invalid encoding (not Windows-1252)")   
+=======
+            print("  - Invalid encoding (not Windows-1252)")
+    
+>>>>>>> 9ac40abe17fc4512b0bf3a116c4f1c0defac481c
 
 def is_valid_filename(filename):
     errors = []
