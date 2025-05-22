@@ -6,7 +6,6 @@ on:
 
 jobs:
   validate:
-    name: encoding
     runs-on: ubuntu-latest
 
     steps:
@@ -23,5 +22,19 @@ jobs:
           python -m pip install --upgrade pip
           pip install chardet  # Only install what your script needs
 
-      - name: Run validation script
-        run: python .github/check_encoding.py
+      - name: Get changed files
+        id: changed-files
+        run: |
+          git fetch origin develop
+          git diff --name-status origin/develop...HEAD > changed_files.txt
+          echo "CHANGED_FILES=$(awk '{print $2}' changed_files.txt | paste -sd ',' -)" >> $GITHUB_ENV
+
+      - name: Run encoding, naming, and location checks
+        run: |
+          echo "$CHANGED_FILES" | tr ',' '\n' > changed_file_list.txt
+          FILES=$(awk '/\.(sql|txt|csv|pkb)$/' changed_file_list.txt || true)
+          if [ -z "$FILES" ]; then
+            echo "No relevant files to check."
+            exit 0
+          fi
+          python3 .github/check_encoding.py $FILES
