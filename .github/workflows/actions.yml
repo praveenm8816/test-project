@@ -1,0 +1,68 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Validate Encdoing, Naming convention, Folder location before merging PR
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+    types: [opened, synchronize, reopened]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: checkout code
+      - uses: actions/checkout@v4
+        with:
+            fetch-depth: 0
+
+      - name: Fetch base branch
+        run: git fetch origin develop
+
+      - name: check os
+        run: |
+          uname -a
+          cat /etc/*release || true
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+            node-version: '16'   #specify the Node.js version
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.10
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install chardet
+
+      - name: check python version
+        run: |
+            python --version       #verify python installation
+            
+      - name: Get changed files 
+        id: files 
+        run: |
+          #echo "CHANGED_FILES-$(git diff --name-only origin/encoding-check. HEAD)" »> $GITHUB _ENV echo "CHANGED_FILES<<EOF" »› $GITHUB_ENV
+          git diff --name-status origin/encoding-check...HEAD »> $GITHUB_ENV
+          echo "EOF" » $GITHUB_ENV
+      - name: Run encoding check, Naming Convention, Folder location checks 
+        run: |
+          echo "§CHANGED_FILES" | tr ' • 'In" > changed_files.txt # Extract filenames only (ignoring status for §FILES)
+          FILES=$(awk '$2 ~ /\. (sq]|txt|csv|pkb)$/' changed_files.txt | awk '{print $2}' || true)
+          STATUS_FILES=$(awk '$2 ~ /\. (sql|txt|csv|pkb)$/' changed_files. txt || true)
+          if [ -z "$FILES" ]; then echo "No relevant files to check." exit 0 fi
+          python3 github/check_encoding.py $FILES --status-files "$STATUS_FILES"
