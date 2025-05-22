@@ -2,61 +2,120 @@ import sys
 import os
 import re
 import argparse
+import chardet
 
 # Regex patterns
-v_script_pattern = re.compile(r'^(20[0-9]{2})([01][0-2])([0-3][0-9])_[\w\-]+\.sql$', re.IGNORECASE)
-r_script_pattern = re.compile(r'^r__\w+\.(pkb|pks)\.sql$', re.IGNORECASE)
+v_script_pattern = re.compile(r"^v(20[0-9]{2})(0[1-9]|1[0-2])(0[1-9]|[12][0-9]|3[01])__[\w\-]+\.sql$", re.IGNORECASE)
+r_script_pattern = re.compile(r"^r__((SIMDATA|CLP2ADMIN)\.[a-zA-Z0-9_]+)\.(pkb|pks|vw|trg|tps)\.sql$", re.IGNORECASE)
 
 # Expected folder paths
-R_SCRIPT_FOLDER = os.path.normpath("clpss-db/DB/sql/Data")
+V_SCRIPT_FOLDER = os.path.normpath("clpss-db/DB/sql/Data")
 
 R_SCRIPT_FOLDERS = [
     os.path.normpath("clpss-db/DB/sql/Packages"),
     os.path.normpath("clpss-db/DB/sql/Functions"),
     os.path.normpath("clpss-db/DB/sql/Procedures"),
-    os.path.normpath("clpss-db/DB/sql/Views")
+    os.path.normpath("clpss-db/DB/sql/Views"),
+    os.path.normpath("clpss-db/DB/sql/*")
 ]
 
-def is_windows1252_encoded(file_path):
-    with open(file_path, 'rb') as f:
-        raw = f.read()
+# def is_windows1252_encoded(file_path):
+#     with open(file_path, 'rb') as f:
+#         raw = f.read()
 
-    result = chardet.detect(raw)
-    encoding = (result['encoding'] or '').lower()
-    confidence = result.get('confidence', 0)
+#     result = chardet.detect(raw)
+#     encoding = (result['encoding'] or '').lower()
+#     confidence = result.get('confidence', 0)
 
-    print(f"{file_path}: Detected '{encoding}' (confidence: {confidence:.2f})")
-    return encoding == 'windows-1252' and confidence >= 0.7
+#     print(f"{file_path}: Detected '{encoding}' (confidence: {confidence:.2f})")
+#     return encoding == 'windows-1252' and confidence >= 0.7
 
-def main(files):
-    failed = False
-    for file_path in files:
-        if not os.path.isfile(file_path):
-            continue
-        if not is_windows1252_encoded(file_path):
-            print(f"❌ File '{file_path}' is NOT Windows-1252 encoded!")
-            failed = True
-    if failed:
-        sys.exit(1)
-    print("✅ All files are Windows-1252 encoded.")
+# def main(files):
+#     failed = False
+#     for file_path in files:
+#         if not os.path.isfile(file_path):
+#             continue
+#         if not is_windows1252_encoded(file_path):
+#             print(f"File '{file_path}' is NOT Windows-1252 encoded!")
+#             failed = True
+#     if failed:
+#         sys.exit(1)
+#     print("All files are Windows-1252 encoded.")
 
-if _name_ == "_main_":
-    main(sys.argv[1:])
+
+def is_windows1252_encoded(file_path: str) -> bool:
+    try:
+        with open(file_path, 'rb') as f:
+            raw = f.read()
+        result = chardet.detect(raw)
+        encoding = (result['encoding'] or '').lower()
+        confidence = result.get('confidence', 0)
+        print(f"{file_path}: Detected encoding '{encoding}' (confidence: {confidence:.2f})")
+        return encoding == 'windows-1252' and confidence >= 0.80
+    except Exception as e:
+        print(f" Error reading or detecting encoding for {file_path}: {e}")
+        return False
+    
 
 def is_valid_filename(filename):
-    if filename.startswith('v'):
-        return bool(v_script_pattern.match(filename))
-    elif filename.startswith('r'):
-        return bool(r_script_pattern.match(filename))
-    return False
+    errors = []
+    first_char = filename[:1].lower()
+
+    if first_char == 'v':
+        if filename.startswith('V'):
+            errors.append("V script filenames must start with lowercase 'v'")
+        if '__' not in filename:
+            errors.append("V script must contain double underscore '__' after 'vYYYYMMDD__description.sql'")
+
+        match = v_script_pattern.match(filename)
+        if not match:
+            if not re.match(r'^v\d+', filename):
+                errors.append("V script must start with 'v' followed by a date in format YYYYMMDD.")
+            errors.append("V script must follow naming: vYYYYMMDD__description.sql")
+        else:
+            year, month, day = match.groups()
+            if not (2000 <= int(year) <= 2099):
+                errors.append(f"Invalid year '{year}' in V script. Must be between 2000 and 2099.")
+            if not (1 <= int(month) <= 12):
+                errors.append(f"Invalid month '{month}' in V script. Must be between 01 and 12.")
+            if not (1 <= int(day) <= 31):
+                errors.append(f"Invalid day '{day}' in V script. Must be between 01 and 31.")
+
+    elif first_char == 'r':
+        if filename.startswith('R'):
+            errors.append("R script filenames must start with lowercase 'r'.")
+        if '__' not in filename:
+            errors.append("R script must contain double underscore '__' after 'r'.")
+        if 'SIMDATA/' not in filename and 'CLP2ADMIN/' not in filename:
+            errors.append("R scripts must include either 'SIMDATA/' or 'CLP2ADMIN/' in the filename (e.g., r__SIMDATA/description.pkb.sql)")
+        if not (filename.endswith('.pkb.sql') or filename.endswith('.pks.sql') or filename.endswith('.vw.sql') or filename.endswith('.trg.sql')):
+            errors.append("R script must end with '.pkb.sql', '.pks.sql', '.vw.sql', or '.trg.sql'")
+        if not r_script_pattern.match(filename):
+            errors.append("R script must follow the naming pattern: r__SCHEMA/OBJECT.pkb.sql")
+
+    else:
+        errors.append("Filename must start with either 'v' or 'r' for reusable scripts.")
+
+    if errors:
+        return False, "\n - " + "\n - ".join(errors)
+    return True, ""
+
 
 def is_valid_folder(file_path):
     norm_path = os.path.normpath(file_path)
+    file_name = os.path.basename(file_path)
+    
     if os.path.basename(file_path).startswith('v'):
-        return V_SCRIPT_FOLDER in norm_path
-    elif os.path.basename(file_path).startswith('r'):
-        return any(folder in norm_path for folder in R_SCRIPT_FOLDERS)
-    return False
+        if V_SCRIPT_FOLDER not in norm_path:
+            return False, f"V script must be located in '{V_SCRIPT_FOLDER}'"
+        return True, "Success"
+    elif file_name.startswith('r'):
+        for folder in R_SCRIPT_FOLDERS:
+            if folder in norm_path:
+                return True, "Success"
+            return False, f"R scripts must be located in one of: {', '.join(R_SCRIPT_FOLDERS)}"
+        
+    return False, "Unknown script type for folder validation"
 
 def parse_status_files(status_string):
     status_dict = {}
@@ -74,7 +133,6 @@ def main():
     args = parser.parse_args()
 
     status_dict = parse_status_files(args.status_files) if args.status_files else {}
-
     results = {}
     failed = False
 
@@ -122,5 +180,5 @@ def main():
     else:
         print("All files passed encoding, naming, and folder location checks.")
 
-if _name_ == "_main_":
-    main()
+if __name__ == "__main__":
+    main()
