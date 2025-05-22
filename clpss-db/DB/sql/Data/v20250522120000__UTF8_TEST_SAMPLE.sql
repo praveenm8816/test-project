@@ -1,7 +1,7 @@
 -- UTF-8 Encoding Test File
 -- Filename: v20250522120000__UTF8_TEST_SAMPLE.sql
 
--- 👨‍💻 Developer: Test User
+-- 👨‍💻 Developer: Test Users
 -- 🗓️ Date: 2025-05-22
 -- 🧪 Purpose: Verify UTF-8 encoding support in automated workflows
 
