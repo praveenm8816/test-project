@@ -1,0 +1,12 @@
+﻿{
+  "repositoryName": "praveenm8816/test-project",
+  "pipelineDirectory": "test-project",
+  "workspaceDirectory": "test-project\\test-project",
+  "repositories": {
+    "praveenm8816/test-project": {
+      "repositoryPath": "test-project\\test-project",
+      "lastRunOn": "05/22/2025 15:12:49 -04:00"
+    }
+  },
+  "lastRunOn": "05/22/2025 15:13:16 -04:00"
+}

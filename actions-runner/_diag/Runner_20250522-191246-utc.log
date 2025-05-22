@@ -1,0 +1,294 @@
+[2025-05-22 19:12:46Z INFO HostContext] No proxy settings were found based on environmental variables (http_proxy/https_proxy/HTTP_PROXY/HTTPS_PROXY)
+[2025-05-22 19:12:46Z INFO HostContext] Well known directory 'Bin': 'C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\bin'
+[2025-05-22 19:12:46Z INFO HostContext] Well known directory 'Root': 'C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner'
+[2025-05-22 19:12:46Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials'
+[2025-05-22 19:12:46Z INFO HostContext] Well known directory 'Bin': 'C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\bin'
+[2025-05-22 19:12:46Z INFO HostContext] Well known directory 'Root': 'C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner'
+[2025-05-22 19:12:46Z INFO HostContext] Well known config file 'Runner': 'C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.runner'
+[2025-05-22 19:12:46Z INFO Listener] Runner is built for Windows (X64) - win-x64.
+[2025-05-22 19:12:46Z INFO Listener] RuntimeInformation: Microsoft Windows 10.0.19045.
+[2025-05-22 19:12:46Z INFO Listener] Version: 2.324.0
+[2025-05-22 19:12:46Z INFO Listener] Commit: da3412efd49b1cf1a0fbdcbcee4e4ac4cc2177c8
+[2025-05-22 19:12:46Z INFO Listener] Culture: en-CA
+[2025-05-22 19:12:46Z INFO Listener] UI Culture: en-US
+[2025-05-22 19:12:46Z INFO HostContext] Well known directory 'Bin': 'C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\bin'
+[2025-05-22 19:12:46Z INFO HostContext] Well known directory 'Root': 'C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner'
+[2025-05-22 19:12:46Z INFO Listener] Validating directory permissions for: 'C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner'
+[2025-05-22 19:12:46Z INFO CommandLineParser] Parse
+[2025-05-22 19:12:46Z INFO CommandLineParser] Parsing 1 args
+[2025-05-22 19:12:46Z INFO CommandLineParser] parsing argument
+[2025-05-22 19:12:46Z INFO CommandLineParser] HasArgs: False
+[2025-05-22 19:12:46Z INFO CommandLineParser] Adding Command: run
+[2025-05-22 19:12:46Z INFO Listener] Arguments parsed
+[2025-05-22 19:12:46Z INFO Runner] ExecuteCommand
+[2025-05-22 19:12:46Z INFO ConfigurationStore] currentAssemblyLocation: C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\bin\Runner.Listener.dll
+[2025-05-22 19:12:46Z INFO HostContext] Well known directory 'Bin': 'C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\bin'
+[2025-05-22 19:12:46Z INFO ConfigurationStore] binPath: C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\bin
+[2025-05-22 19:12:46Z INFO HostContext] Well known directory 'Bin': 'C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\bin'
+[2025-05-22 19:12:46Z INFO HostContext] Well known directory 'Root': 'C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner'
+[2025-05-22 19:12:46Z INFO ConfigurationStore] RootFolder: C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner
+[2025-05-22 19:12:46Z INFO HostContext] Well known directory 'Bin': 'C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\bin'
+[2025-05-22 19:12:46Z INFO HostContext] Well known directory 'Root': 'C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner'
+[2025-05-22 19:12:46Z INFO HostContext] Well known config file 'Runner': 'C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.runner'
+[2025-05-22 19:12:46Z INFO ConfigurationStore] ConfigFilePath: C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.runner
+[2025-05-22 19:12:46Z INFO HostContext] Well known directory 'Bin': 'C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\bin'
+[2025-05-22 19:12:46Z INFO HostContext] Well known directory 'Root': 'C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner'
+[2025-05-22 19:12:46Z INFO HostContext] Well known config file 'MigratedRunner': 'C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.runner_migrated'
+[2025-05-22 19:12:46Z INFO ConfigurationStore] MigratedConfigFilePath: C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.runner_migrated
+[2025-05-22 19:12:46Z INFO HostContext] Well known directory 'Bin': 'C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\bin'
+[2025-05-22 19:12:46Z INFO HostContext] Well known directory 'Root': 'C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner'
+[2025-05-22 19:12:46Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials'
+[2025-05-22 19:12:46Z INFO ConfigurationStore] CredFilePath: C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials
+[2025-05-22 19:12:46Z INFO HostContext] Well known directory 'Bin': 'C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\bin'
+[2025-05-22 19:12:46Z INFO HostContext] Well known directory 'Root': 'C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner'
+[2025-05-22 19:12:46Z INFO HostContext] Well known config file 'MigratedCredentials': 'C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_migrated'
+[2025-05-22 19:12:46Z INFO ConfigurationStore] MigratedCredFilePath: C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_migrated
+[2025-05-22 19:12:46Z INFO HostContext] Well known directory 'Bin': 'C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\bin'
+[2025-05-22 19:12:46Z INFO HostContext] Well known directory 'Root': 'C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner'
+[2025-05-22 19:12:46Z INFO HostContext] Well known config file 'Service': 'C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.service'
+[2025-05-22 19:12:46Z INFO ConfigurationStore] ServiceConfigFilePath: C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.service
+[2025-05-22 19:12:46Z INFO CommandSettings] Flag 'help': 'False'
+[2025-05-22 19:12:46Z INFO CommandSettings] Flag 'version': 'False'
+[2025-05-22 19:12:46Z INFO CommandSettings] Flag 'commit': 'False'
+[2025-05-22 19:12:46Z INFO CommandSettings] Flag 'check': 'False'
+[2025-05-22 19:12:46Z INFO CommandSettings] Command 'configure': 'False'
+[2025-05-22 19:12:46Z INFO CommandSettings] Command 'remove': 'False'
+[2025-05-22 19:12:46Z INFO CommandSettings] Command 'warmup': 'False'
+[2025-05-22 19:12:46Z INFO ConfigurationManager] LoadSettings
+[2025-05-22 19:12:46Z INFO ConfigurationStore] IsConfigured()
+[2025-05-22 19:12:46Z INFO ConfigurationStore] IsConfigured: True
+[2025-05-22 19:12:46Z INFO ConfigurationManager] Is configured: True
+[2025-05-22 19:12:46Z INFO ConfigurationStore] Read setting file: 314 chars
+[2025-05-22 19:12:46Z INFO ConfigurationManager] Settings Loaded
+[2025-05-22 19:12:46Z INFO ConfigurationStore] IsServiceConfigured()
+[2025-05-22 19:12:46Z INFO ConfigurationStore] IsServiceConfigured: False
+[2025-05-22 19:12:46Z INFO CommandSettings] Command 'run': 'True'
+[2025-05-22 19:12:46Z INFO ConfigurationStore] IsConfigured()
+[2025-05-22 19:12:46Z INFO ConfigurationStore] IsConfigured: True
+[2025-05-22 19:12:46Z INFO ConfigurationManager] Is configured: True
+[2025-05-22 19:12:46Z INFO Runner] Could not parse the argument value '' for StartupType. Defaulting to Manual
+[2025-05-22 19:12:46Z INFO Runner] Set runner startup type - Manual
+[2025-05-22 19:12:46Z INFO CommandSettings] Flag 'once': 'False'
+[2025-05-22 19:12:46Z INFO CommandSettings] Flag 'once': 'False'
+[2025-05-22 19:12:46Z INFO Runner] RunAsync
+[2025-05-22 19:12:46Z INFO ConfigurationManager] LoadMigratedSettings
+[2025-05-22 19:12:46Z INFO ConfigurationStore] IsMigratedConfigured()
+[2025-05-22 19:12:46Z INFO ConfigurationStore] IsMigratedConfigured: False
+[2025-05-22 19:12:46Z INFO Runner] Failed to load migrated settings: No migrated configuration found.
+[2025-05-22 19:12:46Z INFO Runner] Falling back to original .runner settings
+[2025-05-22 19:12:46Z INFO ConfigurationManager] LoadSettings
+[2025-05-22 19:12:46Z INFO ConfigurationStore] IsConfigured()
+[2025-05-22 19:12:46Z INFO ConfigurationStore] IsConfigured: True
+[2025-05-22 19:12:46Z INFO ConfigurationManager] Is configured: True
+[2025-05-22 19:12:46Z INFO ConfigurationManager] Settings Loaded
+[2025-05-22 19:12:46Z INFO MessageListener] {
+  "AgentId": 2,
+  "AgentName": "praveen-runner",
+  "PoolId": 1,
+  "PoolName": "Default",
+  "ServerUrl": "https://pipelinesghubeus24.actions.githubusercontent.com/Q6Bg3yToKvjGHrHHD2M0N8RLz7sXgl9S9o186vkCIeECPjrwp2/",
+  "GitHubUrl": "https://github.com/praveenm8816/test-project",
+  "WorkFolder": "_work"
+}
+[2025-05-22 19:12:46Z INFO MessageListener] Loading Credentials
+[2025-05-22 19:12:46Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:12:46Z INFO ConfigurationStore] stored True
+[2025-05-22 19:12:46Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:12:46Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:12:46Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:12:46Z INFO HostContext] Well known directory 'Bin': 'C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\bin'
+[2025-05-22 19:12:46Z INFO HostContext] Well known directory 'Root': 'C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner'
+[2025-05-22 19:12:46Z INFO HostContext] Well known config file 'RSACredentials': 'C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams'
+[2025-05-22 19:12:46Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:12:46Z INFO MessageListener] Attempt to create session.
+[2025-05-22 19:12:46Z INFO MessageListener] Connecting to the Runner Server...
+[2025-05-22 19:12:46Z INFO RunnerServer] EstablishVssConnection
+[2025-05-22 19:12:46Z INFO RunnerServer] Establish connection with 100 seconds timeout.
+[2025-05-22 19:12:46Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2025-05-22 19:12:46Z INFO RunnerServer] EstablishVssConnection
+[2025-05-22 19:12:46Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2025-05-22 19:12:46Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2025-05-22 19:12:46Z INFO RunnerServer] EstablishVssConnection
+[2025-05-22 19:12:46Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2025-05-22 19:12:46Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2025-05-22 19:12:46Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2025-05-22 19:12:46Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2025-05-22 19:12:46Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2025-05-22 19:12:46Z INFO MessageListener] VssConnection created
+[2025-05-22 19:12:46Z INFO Terminal] WRITE LINE: 
+[2025-05-22 19:12:46Z INFO Terminal] WRITE LINE: 
+[2025-05-22 19:12:46Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:12:46Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:12:46Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2025-05-22 19:12:47Z INFO MessageListener] Session created.
+[2025-05-22 19:12:47Z INFO MessageListener] Registering AuthMigrationChanged event handler.
+[2025-05-22 19:12:47Z INFO Terminal] WRITE LINE: Current runner version: '2.324.0'
+[2025-05-22 19:12:47Z INFO Terminal] WRITE LINE: 2025-05-22 19:12:47Z: Listening for Jobs
+[2025-05-22 19:12:47Z INFO JobDispatcher] Set runner/worker IPC timeout to 30 seconds.
+[2025-05-22 19:12:47Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:12:47Z INFO ConfigurationStore] stored True
+[2025-05-22 19:12:47Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:12:47Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:12:47Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:12:47Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:12:47Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:12:47Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:12:47Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2025-05-22 19:12:48Z INFO MessageListener] Message '5571976949257259373' received from session 'cedc75d4-23d3-4b2d-9627-a058934387f8'.
+[2025-05-22 19:12:48Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:12:48Z INFO ConfigurationStore] stored True
+[2025-05-22 19:12:48Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:12:48Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:12:48Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:12:48Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:12:48Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:12:48Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:12:48Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2025-05-22 19:12:49Z INFO JobDispatcher] Job request 0 for plan 4eb126b0-c2dd-467a-9c57-ff620fe1c7b6 job 61f0a586-f8b8-5506-9409-43e514580e29 received.
+[2025-05-22 19:12:49Z INFO MessageListener] Received job status event. JobState: Busy
+[2025-05-22 19:12:49Z INFO MessageListener] _getMessagesTokenSource is already disposed.
+[2025-05-22 19:12:49Z INFO Terminal] WRITE LINE: 2025-05-22 19:12:49Z: Running job: encoding
+[2025-05-22 19:12:49Z INFO JobDispatcher] Start renew job request 0 for job 61f0a586-f8b8-5506-9409-43e514580e29.
+[2025-05-22 19:12:49Z INFO JobDispatcher] Successfully renew job 61f0a586-f8b8-5506-9409-43e514580e29, job is valid till 2025-05-22 7:22:49 PM
+[2025-05-22 19:12:49Z INFO HostContext] Well known directory 'Bin': 'C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\bin'
+[2025-05-22 19:12:49Z INFO ProcessInvokerWrapper] Starting process:
+[2025-05-22 19:12:49Z INFO ProcessInvokerWrapper]   File name: 'C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\bin\Runner.Worker.exe'
+[2025-05-22 19:12:49Z INFO ProcessInvokerWrapper]   Arguments: 'spawnclient 2192 2208'
+[2025-05-22 19:12:49Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\bin'
+[2025-05-22 19:12:49Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-05-22 19:12:49Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-05-22 19:12:49Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'True'
+[2025-05-22 19:12:49Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-05-22 19:12:49Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2025-05-22 19:12:49Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-05-22 19:12:49Z INFO ProcessInvokerWrapper]   High priority process: 'True'
+[2025-05-22 19:12:49Z INFO ProcessInvokerWrapper] Process started with process id 15184, waiting for process exit.
+[2025-05-22 19:12:49Z INFO JobDispatcher] Send job request message to worker for job 61f0a586-f8b8-5506-9409-43e514580e29.
+[2025-05-22 19:12:49Z INFO ProcessChannel] Sending message of length 21669, with hash 'd8c9a1fde50989323c9d7f1cedfc1c7ec45bb65cb3e2e074c3a1c8b1747ca920'
+[2025-05-22 19:12:49Z INFO JobNotification] Entering JobStarted Notification
+[2025-05-22 19:12:49Z INFO JobNotification] Entering StartMonitor
+[2025-05-22 19:12:50Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:12:50Z INFO ConfigurationStore] stored True
+[2025-05-22 19:12:50Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:12:50Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:12:50Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:12:50Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:13:01Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-05-22 19:13:01Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-05-22 19:13:01Z INFO ProcessInvokerWrapper] Finished process 15184 with exit code 102, and elapsed time 00:00:12.0943040.
+[2025-05-22 19:13:01Z INFO JobDispatcher] Worker finished for job 61f0a586-f8b8-5506-9409-43e514580e29. Code: 102
+[2025-05-22 19:13:01Z INFO JobDispatcher] finish job request for job 61f0a586-f8b8-5506-9409-43e514580e29 with result: Failed
+[2025-05-22 19:13:01Z INFO Terminal] WRITE LINE: 2025-05-22 19:13:01Z: Job encoding completed with result: Failed
+[2025-05-22 19:13:01Z INFO JobDispatcher] Stop renew job request for job 61f0a586-f8b8-5506-9409-43e514580e29.
+[2025-05-22 19:13:01Z INFO JobDispatcher] job renew has been cancelled, stop renew job 61f0a586-f8b8-5506-9409-43e514580e29.
+[2025-05-22 19:13:01Z INFO JobNotification] Entering JobCompleted Notification
+[2025-05-22 19:13:01Z INFO JobNotification] Entering EndMonitor
+[2025-05-22 19:13:01Z INFO MessageListener] Received job status event. JobState: Online
+[2025-05-22 19:13:02Z INFO MessageListener] Message '794187349786885710' received from session 'cedc75d4-23d3-4b2d-9627-a058934387f8'.
+[2025-05-22 19:13:02Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:13:02Z INFO ConfigurationStore] stored True
+[2025-05-22 19:13:02Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:13:02Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:13:02Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:13:02Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:13:02Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:13:02Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:13:02Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2025-05-22 19:13:02Z INFO JobDispatcher] Job request 0 for plan 67ca67a6-33a7-41bf-9bc2-f7391b03d0f8 job b5e109aa-c7a4-5f2f-af02-2ea2cbe33242 received.
+[2025-05-22 19:13:02Z INFO MessageListener] Received job status event. JobState: Busy
+[2025-05-22 19:13:02Z INFO MessageListener] _getMessagesTokenSource is already disposed.
+[2025-05-22 19:13:02Z INFO JobDispatcher] Job request 61f0a586-f8b8-5506-9409-43e514580e29 processed succeed.
+[2025-05-22 19:13:02Z INFO Terminal] WRITE LINE: 2025-05-22 19:13:02Z: Running job: encoding
+[2025-05-22 19:13:02Z INFO JobDispatcher] Start renew job request 0 for job b5e109aa-c7a4-5f2f-af02-2ea2cbe33242.
+[2025-05-22 19:13:02Z INFO JobDispatcher] Successfully renew job b5e109aa-c7a4-5f2f-af02-2ea2cbe33242, job is valid till 2025-05-22 7:23:02 PM
+[2025-05-22 19:13:02Z INFO HostContext] Well known directory 'Bin': 'C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\bin'
+[2025-05-22 19:13:02Z INFO ProcessInvokerWrapper] Starting process:
+[2025-05-22 19:13:02Z INFO ProcessInvokerWrapper]   File name: 'C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\bin\Runner.Worker.exe'
+[2025-05-22 19:13:02Z INFO ProcessInvokerWrapper]   Arguments: 'spawnclient 2172 600'
+[2025-05-22 19:13:02Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\bin'
+[2025-05-22 19:13:02Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-05-22 19:13:02Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-05-22 19:13:02Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'True'
+[2025-05-22 19:13:02Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-05-22 19:13:02Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2025-05-22 19:13:02Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-05-22 19:13:02Z INFO ProcessInvokerWrapper]   High priority process: 'True'
+[2025-05-22 19:13:02Z INFO ProcessInvokerWrapper] Process started with process id 12724, waiting for process exit.
+[2025-05-22 19:13:02Z INFO JobDispatcher] Send job request message to worker for job b5e109aa-c7a4-5f2f-af02-2ea2cbe33242.
+[2025-05-22 19:13:02Z INFO ProcessChannel] Sending message of length 23142, with hash '78f3856f08a459bca4317693afa198b9b39253c18fd95aa07466236874970103'
+[2025-05-22 19:13:03Z INFO JobNotification] Entering JobStarted Notification
+[2025-05-22 19:13:03Z INFO JobNotification] Entering StartMonitor
+[2025-05-22 19:13:04Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:13:04Z INFO ConfigurationStore] stored True
+[2025-05-22 19:13:04Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:13:04Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:13:04Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:13:04Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:13:14Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-05-22 19:13:14Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-05-22 19:13:14Z INFO ProcessInvokerWrapper] Finished process 12724 with exit code 102, and elapsed time 00:00:11.2108210.
+[2025-05-22 19:13:14Z INFO JobDispatcher] Worker finished for job b5e109aa-c7a4-5f2f-af02-2ea2cbe33242. Code: 102
+[2025-05-22 19:13:14Z INFO JobDispatcher] finish job request for job b5e109aa-c7a4-5f2f-af02-2ea2cbe33242 with result: Failed
+[2025-05-22 19:13:14Z INFO Terminal] WRITE LINE: 2025-05-22 19:13:14Z: Job encoding completed with result: Failed
+[2025-05-22 19:13:14Z INFO JobDispatcher] Stop renew job request for job b5e109aa-c7a4-5f2f-af02-2ea2cbe33242.
+[2025-05-22 19:13:14Z INFO JobDispatcher] job renew has been cancelled, stop renew job b5e109aa-c7a4-5f2f-af02-2ea2cbe33242.
+[2025-05-22 19:13:14Z INFO JobNotification] Entering JobCompleted Notification
+[2025-05-22 19:13:14Z INFO JobNotification] Entering EndMonitor
+[2025-05-22 19:13:14Z INFO MessageListener] Received job status event. JobState: Online
+[2025-05-22 19:13:14Z INFO MessageListener] Message '5327033315558135890' received from session 'cedc75d4-23d3-4b2d-9627-a058934387f8'.
+[2025-05-22 19:13:14Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:13:14Z INFO ConfigurationStore] stored True
+[2025-05-22 19:13:14Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:13:14Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:13:14Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:13:14Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:13:14Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:13:14Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:13:14Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2025-05-22 19:13:15Z INFO JobDispatcher] Job request 0 for plan aa1d5872-f45e-4796-97f4-efce48785d20 job fcff8936-fd7d-5bb2-bc0f-34cc7de81fd4 received.
+[2025-05-22 19:13:15Z INFO MessageListener] Received job status event. JobState: Busy
+[2025-05-22 19:13:15Z INFO MessageListener] _getMessagesTokenSource is already disposed.
+[2025-05-22 19:13:15Z INFO JobDispatcher] Job request b5e109aa-c7a4-5f2f-af02-2ea2cbe33242 processed succeed.
+[2025-05-22 19:13:15Z INFO Terminal] WRITE LINE: 2025-05-22 19:13:15Z: Running job: encoding
+[2025-05-22 19:13:15Z INFO JobDispatcher] Start renew job request 0 for job fcff8936-fd7d-5bb2-bc0f-34cc7de81fd4.
+[2025-05-22 19:13:15Z INFO JobDispatcher] Successfully renew job fcff8936-fd7d-5bb2-bc0f-34cc7de81fd4, job is valid till 2025-05-22 7:23:15 PM
+[2025-05-22 19:13:15Z INFO HostContext] Well known directory 'Bin': 'C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\bin'
+[2025-05-22 19:13:15Z INFO ProcessInvokerWrapper] Starting process:
+[2025-05-22 19:13:15Z INFO ProcessInvokerWrapper]   File name: 'C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\bin\Runner.Worker.exe'
+[2025-05-22 19:13:15Z INFO ProcessInvokerWrapper]   Arguments: 'spawnclient 1788 2328'
+[2025-05-22 19:13:15Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\bin'
+[2025-05-22 19:13:15Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-05-22 19:13:15Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-05-22 19:13:15Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'True'
+[2025-05-22 19:13:15Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-05-22 19:13:15Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2025-05-22 19:13:15Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-05-22 19:13:15Z INFO ProcessInvokerWrapper]   High priority process: 'True'
+[2025-05-22 19:13:15Z INFO ProcessInvokerWrapper] Process started with process id 18532, waiting for process exit.
+[2025-05-22 19:13:15Z INFO JobDispatcher] Send job request message to worker for job fcff8936-fd7d-5bb2-bc0f-34cc7de81fd4.
+[2025-05-22 19:13:15Z INFO ProcessChannel] Sending message of length 22293, with hash '64fe1b67992af7f104545bab9726af5768b0326a6845eb5fa5888993406d4211'
+[2025-05-22 19:13:16Z INFO JobNotification] Entering JobStarted Notification
+[2025-05-22 19:13:16Z INFO JobNotification] Entering StartMonitor
+[2025-05-22 19:13:17Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:13:17Z INFO ConfigurationStore] stored True
+[2025-05-22 19:13:17Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:13:17Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:13:17Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:13:17Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams
+[2025-05-22 19:13:27Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-05-22 19:13:27Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-05-22 19:13:27Z INFO ProcessInvokerWrapper] Finished process 18532 with exit code 102, and elapsed time 00:00:11.5405409.
+[2025-05-22 19:13:27Z INFO JobDispatcher] Worker finished for job fcff8936-fd7d-5bb2-bc0f-34cc7de81fd4. Code: 102
+[2025-05-22 19:13:27Z INFO JobDispatcher] finish job request for job fcff8936-fd7d-5bb2-bc0f-34cc7de81fd4 with result: Failed
+[2025-05-22 19:13:27Z INFO Terminal] WRITE LINE: 2025-05-22 19:13:27Z: Job encoding completed with result: Failed
+[2025-05-22 19:13:27Z INFO JobDispatcher] Stop renew job request for job fcff8936-fd7d-5bb2-bc0f-34cc7de81fd4.
+[2025-05-22 19:13:27Z INFO JobDispatcher] job renew has been cancelled, stop renew job fcff8936-fd7d-5bb2-bc0f-34cc7de81fd4.
+[2025-05-22 19:13:27Z INFO JobNotification] Entering JobCompleted Notification
+[2025-05-22 19:13:27Z INFO JobNotification] Entering EndMonitor
+[2025-05-22 19:13:27Z INFO MessageListener] Received job status event. JobState: Online
+[2025-05-22 19:14:07Z INFO ConfigurationStore] HasCredentials()
+[2025-05-22 19:14:07Z INFO ConfigurationStore] stored True
+[2025-05-22 19:14:07Z INFO CredentialManager] GetCredentialProvider
+[2025-05-22 19:14:07Z INFO CredentialManager] Creating type OAuth
+[2025-05-22 19:14:07Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-22 19:14:07Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\madan\OneDrive\Documents\GitHub\test-project\actions-runner\.credentials_rsaparams

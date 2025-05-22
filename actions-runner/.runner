@@ -1,0 +1,9 @@
+﻿{
+  "agentId": 2,
+  "agentName": "praveen-runner",
+  "poolId": 1,
+  "poolName": "Default",
+  "serverUrl": "https://pipelinesghubeus24.actions.githubusercontent.com/Q6Bg3yToKvjGHrHHD2M0N8RLz7sXgl9S9o186vkCIeECPjrwp2/",
+  "gitHubUrl": "https://github.com/praveenm8816/test-project",
+  "workFolder": "_work"
+}
