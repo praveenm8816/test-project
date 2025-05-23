@@ -15,8 +15,6 @@ def convert_file_to_windows1252(src_path, dst_path=None):
 if __name__ == "__main__":
     files = [
         r"clpss-db/DB/sql/Procedures/r__SIMDATA__description.pks.sql",
-        r"clpss-db/DB/sql/Views/r__CLP2ADMIN_descriptiom_pks.sql",
-        r"clpss-db/DB/sql/Views/v20161223133700000_EMPL1252_pyla.sql"
     ]
     for file in files:
         if os.path.exists(file):
