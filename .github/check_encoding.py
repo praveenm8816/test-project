@@ -22,14 +22,20 @@ R_SCRIPT_FOLDERS = [
 from pathlib import Path
 
 def is_windows1252(filepath):
+    # Use chardet to strictly check encoding
     try:
         with open(filepath, 'rb') as f:
             raw = f.read()
-        # Try decoding the entire file as Windows-1252
-        raw.decode('windows-1252')
-        return True
-    except UnicodeDecodeError as e:
-        print(f"[Encoding Error] File '{filepath}' contains bytes that are not valid Windows-1252: {e}")
+        result = chardet.detect(raw)
+        encoding = (result['encoding'] or '').lower()
+        confidence = result.get('confidence', 0)
+        if encoding == 'windows-1252' and confidence >= 0.8:
+            return True
+        else:
+            print(f"[Encoding Error] File '{filepath}' detected as '{encoding}' (confidence: {confidence:.2f}), not Windows-1252.")
+            return False
+    except Exception as e:
+        print(f"[Encoding Error] Could not check encoding for '{filepath}': {e}")
         return False
 
 def is_valid_filename(filename):
