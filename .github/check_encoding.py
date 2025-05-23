@@ -29,7 +29,7 @@ def is_windows1252(filepath):
         result = chardet.detect(raw)
         encoding = (result['encoding'] or '').lower()
         confidence = result.get('confidence', 0)
-        if encoding == ['windows-1252', 'iso-8859-1', 'ascii'] and confidence >= 0.7:
+        if encoding in ['windows-1252', 'iso-8859-1', 'ascii'] and confidence >= 0.7:
             return True
         print(f"[Encoding Error] File '{filepath}' detected as '{encoding}' (confidence: {confidence:.2f}), not Windows-1252.")
         return False
