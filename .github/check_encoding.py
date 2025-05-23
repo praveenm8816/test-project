@@ -163,7 +163,7 @@ def main():
             continue
 
         results[file_path] = {
-            "encoding": is_windows1252_encoded(file_path),
+            "encoding": is_windows1252(file_path),
             "naming": is_valid_filename(file_name),
             "folder": is_valid_folder(file_path)
         }
