@@ -5,7 +5,7 @@ import argparse
 import chardet
 
 # Regex patterns
-v_script_pattern = re.compile(r"^v(20[0-9]{2})(0[1-9]|1[0-2])(0[1-9]|[12][0-9]|3[01])__[\w\-]+\.sql$", re.IGNORECASE)
+v_script_pattern = re.compile(r"^v(20[0-9]{2}(0[1-9]|1[0-2])(0[1-9]|[12][0-9]|3[01])[0-9]{9})__[\w\-]+\.sql$", re.IGNORECASE)
 r_script_pattern = re.compile(r"^r__((SIMDATA|CLP2ADMIN)\.[a-zA-Z0-9_]+)\.(pkb|pks|vw|trg|tps)\.sql$", re.IGNORECASE)
 
 # Expected folder paths
