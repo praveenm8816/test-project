@@ -1,5 +1,5 @@
 
--- WINDOWS-1252 Encoding Test File
+-- WINDOWS-1252 Encoding Test File, dsbcbdsvcdshcbjdsc
 -- Filename: v20250522121500__WIN1252_TEST_SAMPLE.sql
 
 -- Developer: Test User
@@ -14,13 +14,13 @@ CREATE TABLE customer (
     comments TEXT
 );
 
--- Insert data with Windows-1252 specific characters: , , , , , , , 
+-- Insert data with Windows-1252 specific characters: Â, Â, Â, Â, Â, Â, Â, Â
 INSERT INTO customer (id, name, comments) VALUES
-(1, 'Rene', 'Uses the  symbol and quotes'),
-(2, 'Andr', 'Prefers French cuisine  trs bon!'),
-(3, 'Jrgen', 'Technischer Leiter  groartige Arbeit!'),
-(4, 'Marta', 'Habla espaol con  y mucho ms.'),
-(5, 'Franois', 'Le garon mange du pt avec got.');
+(1, 'RenÂe', 'Uses the Â symbol and ÂquotesÂÂ'),
+(2, 'AndrÂ', 'Prefers French cuisine Â trÂs bon!'),
+(3, 'JÂrgen', 'Technischer Leiter Â groÂartige Arbeit!'),
+(4, 'Marta', 'Habla espaÂol con Â y mucho mÂs.'),
+(5, 'FranÂois', 'Le garÂon mange du pÂtÂ avec goÂt.');
 
 -- Select query
 SELECT * FROM customer;
