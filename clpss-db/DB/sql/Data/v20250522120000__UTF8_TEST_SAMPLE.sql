@@ -1,9 +1,9 @@
 -- UTF-8 Encoding Test File
 -- Filename: v20250522120000__UTF8_TEST_SAMPLE.sql
 
--- 👨‍💻 Developer: Test User
--- 🗓️ Date: 2025-05-22
--- 🧪 Purpose: Verify UTF-8 encoding support in automated workflows
+-- ????? Developer: Test Users
+-- ??? Date: 2025-05-22
+-- ?? Purpose: Verify UTF-8 encoding support in automated workflows
 
 DROP TABLE IF EXISTS employee;
 
@@ -18,11 +18,11 @@ CREATE TABLE employee (
 
 -- Insert multilingual & special characters
 INSERT INTO employee (id, first_name, last_name, department, bio) VALUES
-(1, 'André', 'López', 'Engineering', 'Loves programming 💻 and AI 🤖.'),
-(2, '李', '王', '研发部门', '擅长Python和数据科学。'),
-(3, 'Miyuki', 'さくら', '設計部門', 'アートとデザインに情熱を持っている。'),
-(4, 'Zoë', 'Façade', 'Design', 'Creative strategist 🎨 with a love for UX.'),
-(5, 'Jürgen', 'Özil', 'R&D', 'Expert in IoT and embedded systems 🔧.');
+(1, 'Andr?', 'L?pez', 'Engineering', 'Loves programming ?? and AI ??.'),
+(2, '?', '?', '????', '??Python??????'),
+(3, 'Miyuki', '???', '????', '??????????????????'),
+(4, 'Zo?', 'Fa?ade', 'Design', 'Creative strategist ?? with a love for UX.'),
+(5, 'J?rgen', '?zil', 'R&D', 'Expert in IoT and embedded systems ??.');
 
 -- Simple SELECT
 SELECT * FROM employee;
@@ -38,8 +38,8 @@ CREATE TABLE department (
 INSERT INTO department (id, name) VALUES
 (1, 'Engineering'),
 (2, 'Design'),
-(3, '研发部门'),
-(4, '設計部門'),
+(3, '????'),
+(4, '????'),
 (5, 'R&D');
 
 SELECT e.first_name, e.last_name, d.name AS dept_name

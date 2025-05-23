@@ -19,41 +19,26 @@ R_SCRIPT_FOLDERS = [
     os.path.normpath("clpss-db/DB/sql/*")
 ]
 
-def is_windows1252_encoded(file_path):
+from pathlib import Path
+
+def is_windows1252(filepath):
+    # Use chardet to strictly check encoding
     try:
-        with open("file_path 'r', encoding='windows-1252'") as f:
-            f.read()
-        return True
-    except UnicodeDecodeError:
+        with open(filepath, 'rb') as f:
+            raw = f.read()
+        result = chardet.detect(raw)
+        encoding = (result['encoding'] or '').lower()
+        confidence = result.get('confidence', 0)
+        if encoding == 'windows-1252' and confidence >= 0.8:
+            return True
+        print(f"[Encoding Error] File '{filepath}' detected as '{encoding}' (confidence: {confidence:.2f}), not Windows-1252.")
+        return False
+    except Exception as e:
+        print(f"[Encoding Error] Could not check encoding for '{filepath}': {e}")
         return False
 
-
-# def is_windows1252_encoded(file_path, min_confidence=0.8):
-#     try:
-#         with open(file_path, 'rb') as f:
-#             raw = f.read()
-#         result = chardet.detect(raw)
-#         encoding = (result['encoding'] or '').lower()
-#         confidence = result.get('confidence', 0)
-#         print(f"{file_path}: Detected encoding '{encoding}' (confidence: {confidence:.2f})")
-#         return encoding == 'windows-1252' and confidence >= min_confidence
-#     except Exception as e:
-#         print(f"Error reading or detecting encoding for {file_path}: {e}")
-#         return False
-
-# def main(files):
-#     failed = False
-#     for file_path in files:
-#         if not os.path.isfile(file_path):
-#             continue
-#         if not is_windows1252_encoded(file_path):
-#             print(f"File '{file_path}' is NOT Windows-1252 encoded!")
-#             failed = True
-#     if failed:
-#         sys.exit(1)
-#     print("All files are Windows-1252 encoded.")
-
 def is_valid_filename(filename):
+
     errors = []
     first_char = filename[:1].lower()
 
@@ -63,8 +48,7 @@ def is_valid_filename(filename):
         if '__' not in filename:
             errors.append("V script must contain double underscore '__' after 'vYYYYMMDD__description.sql'")
 
-        match = v_script_pattern.match(filename)
-        if not match:
+        if not (match := v_script_pattern.match(filename)):
             if not re.match(r'^v\d+', filename):
                 errors.append("V script must start with 'v' followed by a date in format YYYYMMDD.")
             errors.append("V script must follow naming: vYYYYMMDD__description.sql")
@@ -92,10 +76,7 @@ def is_valid_filename(filename):
     else:
         errors.append("Filename must start with either 'v' or 'r' for reusable scripts.")
 
-    if errors:
-        return False, "\n - " + "\n - ".join(errors)
-    return True, ""
-
+    return (False, "\n - " + "\n - ".join(errors)) if errors else (True, "")
 
 def is_valid_folder(file_path):
     norm_path = os.path.normpath(file_path)
@@ -109,7 +90,7 @@ def is_valid_folder(file_path):
         for folder in R_SCRIPT_FOLDERS:
             if folder in norm_path:
                 return True, "Success"
-            return False, f"R scripts must be located in one of: {', '.join(R_SCRIPT_FOLDERS)}"
+        return False, f"R scripts must be located in one of: {', '.join(R_SCRIPT_FOLDERS)}"
 
     return False, "Unknown script type for folder validation"
 
@@ -150,7 +131,7 @@ def main():
             continue
 
         results[file_path] = {
-            "encoding": is_windows1252_encoded(file_path),
+            "encoding": is_windows1252(file_path),
             "naming": is_valid_filename(file_name),
             "folder": is_valid_folder(file_path)
         }
