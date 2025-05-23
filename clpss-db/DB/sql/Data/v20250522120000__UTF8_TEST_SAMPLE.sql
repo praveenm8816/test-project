@@ -1,4 +1,4 @@
--- UTF-8 Encoding Test Files,sample test file
+-- UTF-8 Encoding Test Files,sample test file here u go
 -- Filename: v20250522120000__UTF8_TEST_SAMPLE.sql
 
 -- ????? Developer: Test Users
