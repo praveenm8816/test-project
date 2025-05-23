@@ -36,5 +36,5 @@ SET companyid = broker_users (i). company_id,
 branchid - broker_users (i).branch_id
 WHERE employeeid = broker_employee_id;
 END IF;
-END?IF;
-END?LOOP;
+END IF;
+END LOOP;
