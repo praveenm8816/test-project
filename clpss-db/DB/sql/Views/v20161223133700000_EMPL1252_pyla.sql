@@ -1,4 +1,4 @@
-ï»¿DECLARE
+?DECLARE
 	TYPE broker_user_rec IS RECORD
 	(
 		user_id company_id branch_id
@@ -36,5 +36,5 @@ SET companyid = broker_users (i). company_id,
 branchid - broker_users (i).branch_id
 WHERE employeeid = broker_employee_id;
 END IF;
-ENDÂ IF;
-ENDÂ LOOP;
+END IF;
+END LOOP;
