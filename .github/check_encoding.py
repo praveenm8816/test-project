@@ -140,9 +140,9 @@ def main():
         errors = []
         if not checks["encoding"]:
             errors.append("Invalid encoding (not Windows-1252)")
-        if not checks["naming"]:
+        if not checks["naming"][0]:
             errors.append("Invalid naming convention")
-        if not checks["folder"]:
+        if not checks["folder"][0]:
             errors.append("Incorrect folder location")
 
         if errors:
