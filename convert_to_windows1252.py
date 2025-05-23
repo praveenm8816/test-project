@@ -14,9 +14,8 @@ def convert_file_to_windows1252(src_path, dst_path=None):
 
 if __name__ == "__main__":
     files = [
-        r"clpss-db\DB\sql\Data\v20250522120000__UTF8_TEST_SAMPLE.sql",
-        r"clpss-db\DB\sql\Packages\windows1252.sql",
-        r"c:\Users\madan\Downloads\v20161223133700000_EMPL1252.sql"
+        r"clpss-db\DB\sql\Views\r__SIMDATA__description.pks.sql",
+        r"clpss-db\DB\sql\Packages\r__SIMDATA__description.pks.sql",
     ]
     for file in files:
         if os.path.exists(file):
