@@ -3,12 +3,12 @@ name: actions
 on:
   pull_request:
     branches: [ "develop" ]
-    #types: [ opened, synchronize, reopened ]
+    types: [ opened, synchronize, reopened ]
   push:
     branches: [ "develop" ]
 
 jobs:
-  validate:
+  actions:
     runs-on: ubuntu-latest
 
     steps:
