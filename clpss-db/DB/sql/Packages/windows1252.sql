@@ -1,5 +1,5 @@
 DECLARE
-	TYPE broker_user_rec IS RECORD
+	TYPE broker_user_rec IS RECORDeydbvhbsduvbuysdbvyubsdygbvdsvdvdv
 	(
 		user_id company_id branch_id
 		simdata. employee.userid%TYPE, simdata. employee.companyid%TYPE, simdata.employee.branchid%TYPE
@@ -36,5 +36,5 @@ SET companyid = broker_users (i). company_id,
 branchid - broker_users (i).branch_id
 WHERE employeeid = broker_employee_id;
 END IF;
-END IF;
-END LOOP;
+ENDÂ IF;
+ENDÂ LOOP;
