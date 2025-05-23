@@ -31,14 +31,14 @@ def is_windows1252(filepath):
         confidence = result.get('confidence', 0)
         if encoding == 'windows-1252' and confidence >= 0.8:
             return True
-        else:
-            print(f"[Encoding Error] File '{filepath}' detected as '{encoding}' (confidence: {confidence:.2f}), not Windows-1252.")
-            return False
+        print(f"[Encoding Error] File '{filepath}' detected as '{encoding}' (confidence: {confidence:.2f}), not Windows-1252.")
+        return False
     except Exception as e:
         print(f"[Encoding Error] Could not check encoding for '{filepath}': {e}")
         return False
 
 def is_valid_filename(filename):
+
     errors = []
     first_char = filename[:1].lower()
 
@@ -48,8 +48,7 @@ def is_valid_filename(filename):
         if '__' not in filename:
             errors.append("V script must contain double underscore '__' after 'vYYYYMMDD__description.sql'")
 
-        match = v_script_pattern.match(filename)
-        if not match:
+        if not (match := v_script_pattern.match(filename)):
             if not re.match(r'^v\d+', filename):
                 errors.append("V script must start with 'v' followed by a date in format YYYYMMDD.")
             errors.append("V script must follow naming: vYYYYMMDD__description.sql")
@@ -77,9 +76,7 @@ def is_valid_filename(filename):
     else:
         errors.append("Filename must start with either 'v' or 'r' for reusable scripts.")
 
-    if errors:
-        return False, "\n - " + "\n - ".join(errors)
-    return True, ""
+    return (False, "\n - " + "\n - ".join(errors)) if errors else (True, "")
 
 def is_valid_folder(file_path):
     norm_path = os.path.normpath(file_path)
