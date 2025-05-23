@@ -14,13 +14,13 @@ CREATE TABLE customer (
     comments TEXT
 );
 
--- Insert data with Windows-1252 specific characters: €, ‚, “, ”, …, ñ, ü, ç
+-- Insert data with Windows-1252 specific characters: , , , , , , , 
 INSERT INTO customer (id, name, comments) VALUES
-(1, 'Renée', 'Uses the € symbol and “quotes”…'),
-(2, 'André', 'Prefers French cuisine – très bon!'),
-(3, 'Jürgen', 'Technischer Leiter – großartige Arbeit!'),
-(4, 'Marta', 'Habla español con ñ y mucho más.'),
-(5, 'François', 'Le garçon mange du pâté avec goût.');
+(1, 'Rene', 'Uses the  symbol and quotes'),
+(2, 'Andr', 'Prefers French cuisine  trs bon!'),
+(3, 'Jrgen', 'Technischer Leiter  groartige Arbeit!'),
+(4, 'Marta', 'Habla espaol con  y mucho ms.'),
+(5, 'Franois', 'Le garon mange du pt avec got.');
 
 -- Select query
 SELECT * FROM customer;

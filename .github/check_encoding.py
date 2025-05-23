@@ -19,16 +19,27 @@ R_SCRIPT_FOLDERS = [
     os.path.normpath("clpss-db/DB/sql/*")
 ]
 
-def is_windows1252_encoded(file_path):
+from pathlib import Path
+
+def is_windows1252(filepath):
     try:
-        with open("file_path, 'r', encoding='windows-1252'") as f:
-            f.read()
+        with open(filepath, 'rb') as f:
+            raw = f.read()
+        # Try decoding the entire file as Windows-1252
+        raw.decode('windows-1252')
         return True
-    except UnicodeDecodeError:
-        return False
-    except FileNotFoundError:
+    except UnicodeDecodeError as e:
+        print(f"File {filepath} is NOT valid Windows-1252: {e}")
         return False
 
+if __name__ == "__main__":
+    failed = False
+    for file in sys.argv[1:]:
+        if not is_windows1252(file):
+            failed = True
+    if failed:
+        sys.exit(1)
+        
 
 # def is_windows1252_encoded(file_path, min_confidence=0.8):
 #     try:
