@@ -1,4 +1,4 @@
-name: PR validation checks
+name: Validate Encoding, Naming, Folder locations, Modifications
 
 on:
   pull_request:
@@ -8,7 +8,7 @@ on:
     branches: [ "develop" ]
 
 jobs:
-  PR Validations:     # <-- Job name matches workflow name
+  PR_Validations:     # <-- Job name matches workflow name
     runs-on: ubuntu-latest
 
     steps:
