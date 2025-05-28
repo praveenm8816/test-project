@@ -1,0 +1,1 @@
+give me big script with french characters for Insurance company in Canada, to test encoding checks. Give it in format of UTF-8 incorrect and WINDOWS-1252 correct so that I can test it
