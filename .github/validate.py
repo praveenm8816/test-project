@@ -18,49 +18,50 @@ R_SCRIPT_FOLDERS = [
     os.path.normpath("clpss-db/DB/sql/*")
 ]
 
-# def is_windows1252(filepath):
-#     """
-#     Checks if the file can be decoded as Windows-1252 (like Flyway and your Maven rule).
-#     Returns True if valid, False otherwise.
-#     """
-#     try:
-#         with open(filepath, 'rb') as f:
-#             f.read().decode('windows-1252')
-#         return True
-#     except Exception as e:
-#         print(f"[Encoding Error] File '{filepath}' is not Windows-1252: {e}")
-#         return False
+# --- Encoding check with universalchardet-like logic ---
+try:
+    from charset_normalizer import from_path
+    def is_windows1252_detect(filepath):
+        """
+        Use charset-normalizer to mimic universalchardet (Flyway) detection for Windows-1252.
+        """
+        try:
+            result = from_path(filepath).best()
+            encoding = result.encoding.lower() if result and result.encoding else ''
+            # Accept both windows-1252 and cp1252 as valid
+            if encoding in ['windows-1252', 'cp1252', 'iso-8859-1', 'ascii']:
+                return True
+            print(f"[Encoding Error] File '{filepath}' detected as '{encoding}', not Windows-1252.")
+            return False
+        except Exception as e:
+            print(f"[Encoding Error] File '{filepath}': {e}")
+            return False
+except ImportError:
+    def is_windows1252_detect(filepath):
+        """
+        Fallback: strict decode as Windows-1252, ISO-8859-1, or ASCII (no guessing).
+        """
+        encodings_to_try = ['windows-1252', 'cp1252', 'iso-8859-1', 'ascii']
+        try:
+            with open(filepath, 'rb') as f:
+                raw = f.read()
+            # Fail if file has UTF-8 BOM
+            if raw.startswith(b'\xef\xbb\xbf'):
+                print(f"[Encoding Error] File '{filepath}' has a UTF-8 BOM.")
+                return False
+            for enc in encodings_to_try:
+                try:
+                    raw.decode(enc)
+                    return True
+                except UnicodeDecodeError:
+                    continue
+            print(f"[Encoding Error] File '{filepath}' is not Windows-1252, ISO-8859-1, or ASCII encoded.")
+            return False
+        except Exception as e:
+            print(f"[Encoding Error] File '{filepath}': {e}")
+            return False
 
-# def is_windows1252(filepath):
-#     try:
-#         with open(filepath, 'rb') as f:
-#             raw = f.read()
-#         # Fail if file has UTF-8 BOM
-#         if raw.startswith(b'\xef\xbb\xbf'):
-#             print(f"[Encoding Error] File '{filepath}' has a UTF-8 BOM.")
-#             return False
-#         # Try decoding as Windows-1252
-#         raw.decode('windows-1252')
-#         return True
-#     except Exception as e:
-#         print(f"[Encoding Error] File '{filepath}' is not Windows-1252: {e}")
-#         return False
-
-import chardet
-
-def is_windows1252_detect(filepath):
-    with open(filepath, 'rb') as f:
-        raw = f.read()
-    result = chardet.detect(raw)
-    encoding = (result['encoding'] or '').lower()
-    # Accept both windows-1252 and cp1252 as valid
-    if encoding in ['windows-1252', 'cp1252']:
-        return True
-    print(f"[Encoding Error] File '{filepath}' detected as '{encoding}', not Windows-1252.")
-    return False
-    
 def is_valid_filename(filename):
-
     errors = []
     first_char = filename[:1].lower()
 
@@ -97,10 +98,11 @@ def is_valid_filename(filename):
             errors.append("R script filenames must start with lowercase 'r'.")
         if '__' not in filename:
             errors.append("R script must contain double underscore '__' after 'r'.")
-        if 'SIMDATA.' not in filename:
-            errors.append("R scripts must include either 'SIMDATA.' in the filename (e.g., r__SIMDATA.description.pkb.sql)")
-        if not (filename.endswith('.sql') or filename.endswith('.pkb.sql') or filename.endswith('.pks.sql') or filename.endswith('.vw.sql') or filename.endswith('.trg.sql')):
-            errors.append("R script must end with '.sql', .pkb.sql', '.pks.sql', '.vw.sql', or '.trg.sql'")
+        if 'SIMDATA.' not in filename and 'CLP2ADMIN.' not in filename:
+            errors.append("R scripts must include either 'SIMDATA.' or 'CLP2ADMIN.' in the filename (e.g., r__SIMDATA.description.pkb.sql)")
+        valid_exts = ('.sql', '.pkb.sql', '.pks.sql', '.vw.sql', '.trg.sql')
+        if not any(filename.endswith(ext) for ext in valid_exts):
+            errors.append("R script must end with '.sql', '.pkb.sql', '.pks.sql', '.vw.sql', or '.trg.sql'")
         if not r_script_pattern.match(filename):
             errors.append("R script must follow the naming pattern: r__SCHEMA/OBJECT.pkb.sql")
 
@@ -170,7 +172,7 @@ def main():
     for file, checks in results.items():
         errors = []
         if not checks["encoding"]:
-            errors.append("Invalid encoding (not Windows-1252)")
+            errors.append("Invalid encoding (not Windows-1252 or compatible)")
         if not checks["naming"][0]:
             naming_errors = "\n - " + "\n - ".join(checks["naming"][1])
             errors.append(f"Invalid naming convention:{naming_errors}")
