@@ -1,48 +1,50 @@
-name: actions
+name: Encoding, Naming, and Folder Validation
 
 on:
-  pull_request:
-    branches: [ "develop" ]
-    types: [ opened, synchronize, reopened ]
   push:
-    branches: [ "develop" ]
+    branches:
+      - "feature/**"
+      - "develop"
+      - "release/*"
+  pull_request:
+    branches:
+      - "feature/**"
+      - "develop"
+      - "release/*"
 
 jobs:
-  actions:     # <-- Job name matches workflow name
+  validate-encoding-naming-folder:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Fetch base branch
-        run: git fetch origin develop
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: '3.x'
 
-      - name: Install dependencies
+      - name: Install charset-normalizer
         run: |
-          python -m pip install --upgrade pip
-          pip install --upgrade chardet
+          pip install charset-normalizer
 
-      - name: Get changed files
-        id: changed-files
+      - name: Find relevant files
+        id: filelist
         run: |
-          git diff --name-status origin/develop...HEAD > changed_files.txt
-          echo "CHANGED_FILES=$(awk '{print $2}' changed_files.txt | paste -sd ',' -)" >> $GITHUB_ENV
-          echo "CHANGED_STATUS=$(paste -sd ';' changed_files.txt)" >> $GITHUB_ENV
-
-      - name: Run custom validations
-        run: |
-          echo "$CHANGED_FILES" | tr ',' '\n' > changed_file_list.txt
-          FILES=$(awk '/\.(sql|txt|csv|pkb)$/' changed_file_list.txt || true)
-          if [ -z "$FILES" ]; then
-            echo "No relevant files to check."
-            exit 0
+          git fetch origin ${{ github.base_ref }} --depth=1 || true
+          # Get changed files in the PR or push
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            git diff --name-only origin/${{ github.base_ref }}...${{ github.sha }} > files.txt
+          else
+            git diff --name-only HEAD~1 > files.txt
           fi
-          python3 .github/check_encoding.py $FILES --status-files "$CHANGED_STATUS"
+          cat files.txt
+
+      - name: Run encoding, naming, and folder checks
+        run: |
+          if [[ -s files.txt ]]; then
+            python .github/check_encoding.py $(cat files.txt)
+          else
+            echo "No relevant files changed."
+          fi
