@@ -2,15 +2,11 @@ name: Encoding, Naming, and Folder Validation
 
 on:
   push:
-    branches:
-      - "feature/**"
-      - "develop"
-      - "release/*"
+    branches: [develop]
+ 
   pull_request:
-    branches:
-      - "feature/**"
-      - "develop"
-      - "release/*"
+    branches: [ develop]
+    types: [opened, synchronize, reopened]
 
 jobs:
   validate-encoding-naming-folder:
