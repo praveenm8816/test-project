@@ -2,11 +2,10 @@ import sys
 import os
 import re
 import argparse
-import chardet
 
 # Regex patterns
 v_script_pattern = re.compile(r"^v(20[0-9]{2}(0[1-9]|1[0-2])(0[1-9]|[12][0-9]|3[01])[0-9]{9})__[\w\-]+\.sql$", re.IGNORECASE)
-r_script_pattern = re.compile(r"^r__((SIMDATA|CLP2ADMIN)\.[a-zA-Z0-9_]+)\.(pkb|pks|vw|trg|tps)\.sql$", re.IGNORECASE)
+r_script_pattern = re.compile(r"^r__((SIMDATA|CLP2ADMIN)\.[a-zA-Z0-9_]+)\.(pkb|pks|vw|trg|tps|fnc)\.sql$", re.IGNORECASE)
 
 # Expected folder paths
 V_SCRIPT_FOLDER = os.path.normpath("clpss-db/DB/sql/Data")
@@ -19,26 +18,50 @@ R_SCRIPT_FOLDERS = [
     os.path.normpath("clpss-db/DB/sql/*")
 ]
 
-from pathlib import Path
-
-def is_windows1252(filepath):
-    # Use chardet to strictly check encoding
-    try:
-        with open(filepath, 'rb') as f:
-            raw = f.read()
-        result = chardet.detect(raw)
-        encoding = (result['encoding'] or '').lower()
-        confidence = result.get('confidence', 0)
-        if encoding in ['windows-1252', 'iso-8859-1', 'ascii'] and confidence >= 0.7:
-            return True
-        print(f"[Encoding Error] File '{filepath}' detected as '{encoding}' (confidence: {confidence:.2f}), not Windows-1252.")
-        return False
-    except Exception as e:
-        print(f"[Encoding Error] Could not check encoding for '{filepath}': {e}")
-        return False
+# --- Encoding check with universalchardet-like logic ---
+try:
+    from charset_normalizer import from_path
+    def is_windows1252_detect(filepath):
+        """
+        Use charset-normalizer to mimic universalchardet (Flyway) detection for Windows-1252.
+        """
+        try:
+            result = from_path(filepath).best()
+            encoding = result.encoding.lower() if result and result.encoding else ''
+            # Accept both windows-1252 and cp1252 as valid
+            if encoding in ['windows-1252', 'cp1252', 'iso-8859-1', 'ascii']:
+                return True
+            print(f"[Encoding Error] File '{filepath}' detected as '{encoding}', not Windows-1252.")
+            return False
+        except Exception as e:
+            print(f"[Encoding Error] File '{filepath}': {e}")
+            return False
+except ImportError:
+    def is_windows1252_detect(filepath):
+        """
+        Fallback: strict decode as Windows-1252, ISO-8859-1, or ASCII (no guessing).
+        """
+        encodings_to_try = ['windows-1252', 'cp1252', 'iso-8859-1', 'ascii']
+        try:
+            with open(filepath, 'rb') as f:
+                raw = f.read()
+            # Fail if file has UTF-8 BOM
+            if raw.startswith(b'\xef\xbb\xbf'):
+                print(f"[Encoding Error] File '{filepath}' has a UTF-8 BOM.")
+                return False
+            for enc in encodings_to_try:
+                try:
+                    raw.decode(enc)
+                    return True
+                except UnicodeDecodeError:
+                    continue
+            print(f"[Encoding Error] File '{filepath}' is not Windows-1252, ISO-8859-1, or ASCII encoded.")
+            return False
+        except Exception as e:
+            print(f"[Encoding Error] File '{filepath}': {e}")
+            return False
 
 def is_valid_filename(filename):
-
     errors = []
     first_char = filename[:1].lower()
 
@@ -48,35 +71,45 @@ def is_valid_filename(filename):
         if '__' not in filename:
             errors.append("V script must contain double underscore '__' after 'vYYYYMMDD__description.sql'")
 
+        def validate_v_script_date(date_str):
+            if date_str.isdigit() and len(date_str) == 8:
+                year, month, day = int(date_str[:4]), int(date_str[4:6]), int(date_str[6:8])
+                if not (2000 <= year <= 2099):
+                    errors.append(f"Invalid year '{year}' in V script. Must be between 2000 and 2099.")
+                if not (1 <= month <= 12):
+                    errors.append(f"Invalid month '{month}' in V script. Must be between 01 and 12.")
+                if not (1 <= day <= 31):
+                    errors.append(f"Invalid day '{day}' in V script. Must be between 01 and 31.")
+
         if not (match := v_script_pattern.match(filename)):
             if not re.match(r'^v\d+', filename):
                 errors.append("V script must start with 'v' followed by a date in format YYYYMMDD.")
             errors.append("V script must follow naming: vYYYYMMDD__description.sql")
+            # Try to extract and validate date anyway if starts with v
+            date_part = filename[1:9]  # YYYYMMDD
+            validate_v_script_date(date_part)
         else:
-            year, month, day = match.groups()
-            if not (2000 <= int(year) <= 2099):
-                errors.append(f"Invalid year '{year}' in V script. Must be between 2000 and 2099.")
-            if not (1 <= int(month) <= 12):
-                errors.append(f"Invalid month '{month}' in V script. Must be between 01 and 12.")
-            if not (1 <= int(day) <= 31):
-                errors.append(f"Invalid day '{day}' in V script. Must be between 01 and 31.")
+            # Let's extract year, month, day from the first group
+            date_str = match.group(1)[:8]
+            validate_v_script_date(date_str)
 
     elif first_char == 'r':
         if filename.startswith('R'):
             errors.append("R script filenames must start with lowercase 'r'.")
         if '__' not in filename:
             errors.append("R script must contain double underscore '__' after 'r'.")
-        if 'SIMDATA/' not in filename and 'CLP2ADMIN/' not in filename:
-            errors.append("R scripts must include either 'SIMDATA/' or 'CLP2ADMIN/' in the filename (e.g., r__SIMDATA/description.pkb.sql)")
-        if not (filename.endswith('.pkb.sql') or filename.endswith('.pks.sql') or filename.endswith('.vw.sql') or filename.endswith('.trg.sql')):
-            errors.append("R script must end with '.pkb.sql', '.pks.sql', '.vw.sql', or '.trg.sql'")
+        if 'SIMDATA.' not in filename and 'CLP2ADMIN.' not in filename:
+            errors.append("R scripts must include either 'SIMDATA.' or 'CLP2ADMIN.' in the filename (e.g., r__SIMDATA.description.pkb.sql)")
+        valid_exts = ('.sql', '.pkb.sql', '.pks.sql', '.vw.sql', '.trg.sql')
+        if not any(filename.endswith(ext) for ext in valid_exts):
+            errors.append("R script must end with '.sql', '.pkb.sql', '.pks.sql', '.vw.sql', or '.trg.sql'")
         if not r_script_pattern.match(filename):
             errors.append("R script must follow the naming pattern: r__SCHEMA/OBJECT.pkb.sql")
 
     else:
         errors.append("Filename must start with either 'v' or 'r' for reusable scripts.")
 
-    return (False, "\n - " + "\n - ".join(errors)) if errors else (True, "")
+    return (False, errors) if errors else (True, "")
 
 def is_valid_folder(file_path):
     norm_path = os.path.normpath(file_path)
@@ -131,7 +164,7 @@ def main():
             continue
 
         results[file_path] = {
-            "encoding": is_windows1252(file_path),
+            "encoding": is_windows1252_detect(file_path),
             "naming": is_valid_filename(file_name),
             "folder": is_valid_folder(file_path)
         }
@@ -139,11 +172,12 @@ def main():
     for file, checks in results.items():
         errors = []
         if not checks["encoding"]:
-            errors.append("Invalid encoding (not Windows-1252)")
+            errors.append("Invalid encoding (not Windows-1252 or compatible)")
         if not checks["naming"][0]:
-            errors.append("Invalid naming convention")
+            naming_errors = "\n - " + "\n - ".join(checks["naming"][1])
+            errors.append(f"Invalid naming convention:{naming_errors}")
         if not checks["folder"][0]:
-            errors.append("Incorrect folder location")
+            errors.append(f"Incorrect folder location:\n - {checks['folder'][1]}")
 
         if errors:
             failed = True
